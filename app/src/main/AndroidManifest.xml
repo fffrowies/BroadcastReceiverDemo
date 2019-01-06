@@ -23,9 +23,15 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".MySecondReceiver">
+            <intent-filter>
+                <action android:name="my.custom.action.name"/>
+            </intent-filter>
+        </receiver>
+
         <receiver android:name=".MainActivity$MyThirdReceiverInner">
             <intent-filter>
-                <action android:name="my.custom.anotheraction.name"/>
+                <action android:name="my.custom.action.name"/>
             </intent-filter>
         </receiver>
 
