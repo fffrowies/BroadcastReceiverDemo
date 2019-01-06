@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 //        Intent intent = new Intent(this, MyFirstReceiver.class);
         Intent intent = new Intent("my.custom.action.name");
         sendBroadcast(intent);
+
+//        Toast.makeText(this, "After Sending Broadcast", Toast.LENGTH_LONG).show();
     }
 
     public void broadcastToInnerReceiver(View view) {
