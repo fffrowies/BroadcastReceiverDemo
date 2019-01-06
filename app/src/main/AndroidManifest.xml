@@ -18,6 +18,9 @@
         </activity>
 
         <receiver android:name=".MyFirstReceiver"/>
+
+        <receiver android:name=".MainActivity$MyThirdReceiverInner"/>
+
     </application>
 
 </manifest>
