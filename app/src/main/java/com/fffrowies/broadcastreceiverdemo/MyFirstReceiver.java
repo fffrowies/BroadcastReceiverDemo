@@ -13,15 +13,11 @@ public class MyFirstReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        Log.i(TAG, "Hello from 1st Receiver, Thread Name: " + Thread.currentThread().getName());
-        Toast.makeText(context, "Hello from 1st Receiver", Toast.LENGTH_LONG).show();
+        String name = intent.getStringExtra("name");
+        int age = intent.getIntExtra("age", 0);
+        Log.i(TAG, "Name: " + name + ", Age: " + age);
 
-        // never perform long running tasks inside onReceive method of the BroadcastReceiver
-        // (use services)
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Log.i(TAG, "Hello from 1st Receiver");
+        Toast.makeText(context, "Hello from 1st Receiver", Toast.LENGTH_LONG).show();
     }
 }

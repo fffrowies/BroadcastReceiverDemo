@@ -31,7 +31,7 @@
 
         <receiver android:name=".MainActivity$MyThirdReceiverInner">
             <intent-filter>
-                <action android:name="my.custom.action.name"/>
+                <action android:name="my.custom.anotheraction.name"/>
             </intent-filter>
         </receiver>
 
