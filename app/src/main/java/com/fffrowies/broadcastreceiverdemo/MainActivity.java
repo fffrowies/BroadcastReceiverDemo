@@ -1,5 +1,7 @@
 package com.fffrowies.broadcastreceiverdemo;
 
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -22,7 +24,12 @@ public class MainActivity extends AppCompatActivity {
     public void sendBroadcastMessage(View view) {
 
         Intent intent = new Intent("my.custom.action.name");
-        sendBroadcast(intent);
+
+        Bundle b = new Bundle();
+        b.putString("title", "SmartDeveloper");
+
+        sendOrderedBroadcast(intent, null, new MyFourthReceiver(), null,
+                Activity.RESULT_OK, "Android", b);
     }
 
     public static class MyThirdReceiverInner extends BroadcastReceiver {
@@ -32,8 +39,22 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            Log.i(TAG, "Hello from 3rd Receiver");
-            Toast.makeText(context, "Hello from 3rd Receiver", Toast.LENGTH_LONG).show();
+            if (isOrderedBroadcast()) {
+                int initCode = getResultCode();
+                String initData = getResultData();
+                Bundle initBundle = getResultExtras(true);
+                String title = initBundle.getString("title");
+
+                Log.i(TAG, "Code: " + initCode + ", Data: " + initData + ", Bundle: " + title);
+
+                Log.i(TAG, "Hello from 3rd Receiver");
+                Toast.makeText(context, "Hello from 3rd Receiver", Toast.LENGTH_LONG).show();
+
+                setResultCode(17);
+                setResultData("iOS");
+                initBundle.putString("title", "WiseDeveloper");
+                setResultExtras(initBundle);
+            }
         }
     }
 }

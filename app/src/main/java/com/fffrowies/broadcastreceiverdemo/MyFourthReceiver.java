@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-public class MySecondReceiver extends BroadcastReceiver {
+public class MyFourthReceiver extends BroadcastReceiver {
 
-    private static final String TAG = MySecondReceiver.class.getSimpleName();
+    private static final String TAG = MyFourthReceiver.class.getSimpleName();
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -22,14 +22,8 @@ public class MySecondReceiver extends BroadcastReceiver {
 
             Log.i(TAG, "Code: " + initCode + ", Data: " + initData + ", Bundle: " + title);
 
-            Log.i(TAG, "Hello from 2nd Receiver");
-            Toast.makeText(context, "Hello from 2nd Receiver", Toast.LENGTH_LONG).show();
-
-            initBundle.putString("title", "CleverDeveloper");
-
-            setResult(47, "Blackberry", initBundle);
-
-            abortBroadcast();
+            Log.i(TAG, "Hello from 4th Receiver");
+            Toast.makeText(context, "Hello from 4th Receiver", Toast.LENGTH_LONG).show();
         }
     }
 }
