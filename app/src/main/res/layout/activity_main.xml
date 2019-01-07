@@ -16,14 +16,4 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/button2"
-        android:onClick="broadcastToInnerReceiver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="To Inner Receiver"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="70dp"
-        android:layout_centerHorizontal="true" />
-
 </RelativeLayout>
