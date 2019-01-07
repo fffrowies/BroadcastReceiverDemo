@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
             Log.i(TAG, "Hello from 3rd Receiver");
             Toast.makeText(context, "Hello from 3rd Receiver", Toast.LENGTH_LONG).show();
-
         }
     }
 }

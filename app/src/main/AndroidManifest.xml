@@ -19,7 +19,7 @@
 
         <receiver android:name=".MyFirstReceiver">
             <intent-filter>
-                <action android:name="my.custom.action.name"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
             </intent-filter>
         </receiver>
 
